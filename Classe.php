@@ -25,14 +25,25 @@ class Classe implements JsonSerializable{
    }
    
    function search($nome){
-       for($i=0; $i<count($this->alunni); $i++){
-            if($this->alunni[$i]->get_nome() == $nome)
-                return $this->alunni[$i];
+    for($i=0; $i<count($this->alunni); $i++){
+         if($this->alunni[$i]->get_nome() == $nome)
+             return $this->alunni[$i];
 
-          
-       }
-       return null;
-   }
+       
+    }
+    return null;
+}
+function delete($nome){
+    for($i=0; $i<count($this->alunni); $i++){
+         if($this->alunni[$i]->get_nome() == $nome)
+             break;
+
+       
+    }
+    if($i<count($this->array))
+        unset($this->array[$i]);
+    return null;
+}
 
 
    public function jsonSerialize(){

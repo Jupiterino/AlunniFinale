@@ -26,6 +26,31 @@ class AlunniController{
         $response->getBody()->write($message);
         return $response;
      }
+     function create(Request $request, Response $response, $args){
+        $body = $request->getBody()->getContents();
+        $parsedBody = json_decode($body, true);
+
+        $nome = $parsedBody['nome'];
+        $cognome = $parsedBody['cognome'];
+        $eta = $parsedBody['eta'];
+        $response->$getBody()->write($parsedBody('alunno'));
+
+        return $response->withHeader('Content-Type' , 'application/json')->withStatus(201);
+
+     }
+
+     function search(Request $request, Response $response, $args){
+        $body = $request->getBody()->getContents();
+        $parsedBody = json_decode($body, true);
+
+        $nome = $parsedBody['nome'];
+        $cognome = $parsedBody['cognome'];
+        $eta = $parsedBody['eta'];
+        $response->$getBody()->write($parsedBody('alunno'));
+
+        return $response->withHeader('Content-Type' , 'application/json')->withStatus(201);
+
+     }
 }
 
 ?>

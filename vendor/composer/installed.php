@@ -131,9 +131,9 @@
             'dev_requirement' => false,
         ),
         'slim/slim' => array(
-            'pretty_version' => '4.12.0',
-            'version' => '4.12.0.0',
-            'reference' => 'e9e99c2b24398b967841c6c4c3048622cc7e2b18',
+            'pretty_version' => '4.13.0',
+            'version' => '4.13.0.0',
+            'reference' => '038fd5713d5a41636fdff0e8dcceedecdd17fc17',
             'type' => 'library',
             'install_path' => __DIR__ . '/../slim/slim',
             'aliases' => array(),

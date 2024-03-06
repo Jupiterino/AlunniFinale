@@ -17,8 +17,13 @@ $app = AppFactory::create();
 $app->get('/', "SiteController:home");
 $app->get('/alunni', "AlunniController:index");
 $app->get('/alunni/{nome}', "AlunniController:show");
+
+/*** API Routes ****/
 $app->get('/api/alunni', "ApiAlunniController:index");
 $app->get('/api/alunni/{nome}', "ApiAlunniController:show");
+$app->post('/api/alunni', "AlunniController:create");
+$app->put('/api/alunni/{nome}/{cognome}', "AlunniController:update");
+$app->delete('/api/alunni/{nome}', "AlunniController:delete");
 
 
 $app->run();

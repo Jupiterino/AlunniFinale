@@ -27,6 +27,38 @@ class ApiAlunniController{
         }
  
      }
+
+     function update(Request $request, Response $response, $args){
+        $body = $request->getBody()->getContents();
+        $parsedBody = json_decode($body, true);
+        $Classe = new Classe;
+
+        $alunno = $Classe->search($args["nome"]);
+
+        $nome = $parsedBody['nome'];
+        $cognome = $parsedBody['cognome'];
+        $eta = $parsedBody['eta'];
+
+        $response->$getBody()->write($parsedBody('alunno'));
+        return $response->withHeader('Content-Type' , 'application/json')->withStatus(201);
+
+     }
+
+     function delete(Request $request, Response $response, $args){
+        $body = $request->getBody()->getContents();
+        $parsedBody = json_decode($body, true);
+        $Classe = new Classe;
+
+        $alunno = $Classe->search($args["nome"]);
+        
+        $nome = $parsedBody['nome'];
+        $cognome = $parsedBody['cognome'];
+        $eta = $parsedBody['eta'];
+
+        $response->$getBody()->write($parsedBody('alunno'));
+        return $response->withHeader('Content-Type' , 'application/json')->withStatus(201);
+
+     }
 }
 
 ?>
